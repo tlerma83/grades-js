@@ -1,9 +1,11 @@
 var scores = [82, 71, 95, 55, 98, 69, 72, 78, 84, 64, 58, 87];
-var f;
-var d;
-var c;
-var b;
-var a;
+var f =0;
+var d =0;
+var c =0;
+var b = 0;
+var a = 0;
+var highestGrade =100;
+var lowestGrade =50;
 
 //A score of 50-60 is an F
 //A score of 61-70 is a D
@@ -16,19 +18,26 @@ for (var i = 0; i < scores.length; i++) {
     grade += scores[i];
     
     if (grade >= 91 ) {
-        a = "A " + grade;
-        console.log(a);   
+        a++;
     } else if (grade >= 81 && grade <= 90) {
-        b = "B " + grade;
-        console.log(b);
+        b++;
+//        console.log(b);
     } else if (grade >=71 && grade <= 80) {
-        c = "C " + grade;
-        console.log(c);
+        c++;
+//        console.log(c);
     } else if (grade >= 61 && grade <= 70) {
-        d = "D " + grade;
-        console.log(d);
+        d++;
+//        console.log(d);
     } else {
-        f = "F " + grade;
-        console.log(f);
+        f++;
+//        console.log(f);
     }
 }
+console.log("You have " + a + "-A's " + b + "-B's " + c + "-C's " + d + "-D's " + f + "-F's ");
+
+highestGrade = Math.max.apply(null, scores);
+lowestGrade = Math.min.apply(null, scores);
+console.log("Your lowest grade is " + lowestGrade);
+console.log("Your Highest grade is " + highestGrade);
+
+
